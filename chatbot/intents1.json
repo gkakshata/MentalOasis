@@ -1,0 +1,148 @@
+{"intents": [
+  {"tag": "greeting",
+   "patterns": ["Hi",
+                "How are you",
+                "I need to talk to someone!",
+                "Is anyone there?",
+                "Hello",
+                "Good day",
+                "Whats up",
+                "I need help",
+                "I cant take it anymore",
+                "I need someone to listen to me",
+                "hey"],
+   "responses": ["Hello! How are you doing today?",
+                 "Hello, this is Bubble, your beloved Therapist. Come on, let's talk!",
+                 "Good to see you! Let's begin today's session",
+                 "Hi there, how can I help?",
+                 "Is there something you want to talk about? Bubble is here for you!",
+                 "Do you want to talk about something?",
+                 "I am here to help you, we can talk about your feelings",
+                 "Hey I am Bubble, your very own Therapist! Feel free to talk about anything",
+                 "Hi its Bubble, your personal Therapist! Let's talk :)"],
+   "context_set": ""
+  },
+  {"tag": "goodbye",
+   "patterns": ["Goodbye! This was helpful!",
+                "Bye",
+                "byebye",
+                "I have to go",
+                "I should go thanks for talking."],
+   "responses": ["Goodbye, I hope you will take better care of yourself. Looking forward to our next session.",
+                 " I Hope Bubble the Therapist was helpful to you! Let's talk soon!",
+                 "See you later, don't forget what we talked about today! I hope you would feel better after talking to me!",
+                 "I hope you feel better after talking! Take care of yourself, and remember to check in soon!",
+                 "Goodbye, Hope you have a good day ahead :)"],
+   "context_set": ""
+  },
+  
+
+  {"tag": "stress",
+   "patterns": ["I feel stressed",
+                "I am stressed",
+                "I am under a lot of stress",
+                "I feel so stressed",
+                "Today was a stressful day",
+                "I have been feeling stressed"],
+   "responses": ["Deep breathing exercises, progressive muscle relaxation, and guided meditation can help relieve stress.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+   "Engaging in physical activities like yoga, walking, or dancing can be beneficial for stress reduction.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+   "Journaling, practicing mindfulness and engaging in hobbies or creative outlets can also help manage stress.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options."],
+   "context_set": ""
+  },
+
+  {"tag": "identity",
+   "patterns": ["I feel like I am becoming someone I am not.",
+   "I feel like I am losing touch with who I am.",
+  "I feel like I am losing my identity."],
+   "responses": ["It's understandable to feel this way and to question your identity. Remember that personal growth and change are a natural part of life's journey. Here are some coping strategies to explore.Take time for self-reflection and reconnect with your values, interests, and passions. Engage in activities that align with your true self and bring you joy and fulfillment. Please note that while these coping strategies can be helpful, they may not be sufficient for everyone. It's important to consult with a healthcare professional for an accurate diagnosis and personalized recommendations for coping with specific mental health issues.",
+   "Seek support from a therapist or counselor who can provide a safe and non-judgmental space to explore your feelings and identity. They can assist you in gaining clarity and developing coping mechanisms.Surround yourself with supportive and understanding individuals who accept you for who you are. Connecting with like-minded people and participating in communities or support groups can help you find a sense of belonging and support in your journey. Please note that while these coping strategies can be helpful, they may not be sufficient for everyone. It's important to consult with a healthcare professional for an accurate diagnosis and personalized recommendations for coping with specific mental health issues.Please note that while these coping strategies can be helpful, they may not be sufficient for everyone. It's important to consult with a healthcare professional for an accurate diagnosis and personalized recommendations for coping with specific mental health issues."],
+   "context_set": ""
+  },
+
+  {"tag": "restless",
+  "patterns": [" I'm feeling anxious.",
+"How to deal with anxiety"],
+  "responses": ["I'm sorry to hear that you're feeling anxious. Remember that you're not alone in this, and many people experience anxiety. It's important to take care of yourself during these times. Try to find a quiet and comfortable space where you can take a few deep breaths. Inhale slowly through your nose, hold it for a moment, and then exhale slowly through your mouth. This can help calm your body and mind.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+  "It may also be helpful to engage in activities that bring you comfort and relaxation, such as listening to calming music, taking a walk in nature, or practicing mindfulness techniques like focusing on the present moment.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options."],
+  "context_set": ""
+ },
+  
+
+ {"tag": "sleep",
+  "patterns": ["How can I improve my sleep?",
+"What are some tips for better sleep?"],
+  "responses": ["Improving sleep can involve creating a regular sleep schedule, creating a comfortable sleep environment, and practicing relaxation techniques before bed.Tips for better sleep include avoiding caffeine and electronic devices before bed, establishing a bedtime routine, and ensuring your bedroom is quiet and dark.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+  "Tips for better sleep include avoiding caffeine and electronic devices before bed, establishing a bedtime routine, and ensuring your bedroom is quiet and dark.Common sleep disorders include insomnia, sleep apnea, and restless leg syndrome. Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options."],
+  "context_set": ""
+ },
+
+  {"tag": "quotes",
+   "patterns": ["Make me happy",
+                "Cheer me up",
+                "I need to change my mood",
+                "Tell me something",
+                "Tell me some good quotes",
+                "Need some positivity",
+                "Need to hear something good",
+                "I need to cheer up"],
+   "responses": [" 'Tomorrow is always fresh, with no mistakes in it yet' ",
+                 " 'Today will be better. Not because the world has dealt you better cards, but because you choose to use them to your advantage. Today, you choose happiness.' ",
+                 " 'Happiness is not something ready made. It comes from your own actions.' ",
+                 " 'Happiness can be found, even in the darkest of times, if only one remembers to turn on the light.' ",
+                 " 'Imagine walking over a ray of sunshine. Everything is warm and full of light and there is a smile, not on your lips, but rather deep inside of you. There is no past or future, time doesn't exist. You feel like you are becoming one with the sun. You're walking through infinity, one step at a time. Turns out happiness was always a part of you, you just had to allow it to break through. And freedom, freedom was just one tiny step in front of you.' ",
+                 " 'So far, you have made it through all of your worst days. Well done, Keep going friend!' ",
+                 " 'to be kind to all, to like many and love a few, to be needed and wanted by those we love, is certainly the nearest we can come to happiness' ",
+                 " 'If happiness visits you again, do not remember it's previous betrayal. Enter into the happiness and burst' ",
+                 " 'I had the epiphany that laughter was light, and light was laughter, and that this was the secret of the universe.' "],
+   "context_set": ""
+  },
+
+  {"tag": "emotions",
+  "patterns": ["How can I overcome my negative emotions?",
+               "How to let go of negative emotions and thoughts?"],
+  "responses": ["Overcoming negative emotions and cultivating positive ones is a process that takes time and practice. Start by becoming aware of your negative emotions and their triggers and Engage in self-reflection and challenge negative thoughts by replacing them with more positive and realistic ones. Practice gratitude by focusing on the things you are thankful for in your life.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+ "Engage in activities that bring you joy and boost your mood, such as pursuing hobbies, spending time with loved ones, listening to uplifting music, or practicing acts of kindness towards others.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+  "Practice self-care activities that promote emotional well-being, such as regular exercise, sufficient sleep, healthy eating, and engaging in relaxation techniques like deep breathing or mindfulness meditation.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options."],
+  "context_set": ""
+ },
+  
+
+
+ {"tag": "peace",
+ "patterns": ["how to be at peace with reality?"],
+ "responses": ["Finding peace with reality can be a gradual process. Start by practicing acceptance and acknowledging that some things are beyond your control.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.Focus on the present moment through mindfulness and grounding techniques. Engage in activities that bring you joy and provide a sense of purpose.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+ "Cultivate gratitude by reflecting on the positive aspects of your life. Surround yourself with supportive and understanding people who can provide comfort and perspective.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options."],
+ "context_set": ""
+},
+
+
+
+{"tag": "practise",
+ "patterns": ["Mental health Practices?",
+"Give some practises for better mnetal health?"],
+ "responses": ["Practice Positive Self-Talk,Engage in Regular Physical Activity,Establish a Consistent Sleep Routine,Limit Exposure to News and Social Media,Practice Emotional Regulation,Foster a Healthy Work-Life Balance,Practice Assertiveness,Connect with Nature to name a few.Remember, not all habits work the same for everyone. It's important to explore and experiment with different habits to find what works best for you. Adopting a combination of these habits and tailoring them to your specific needs and preferences can contribute to better overall mental health and well-being."],
+ "context_set": ""
+},
+
+
+{"tag": "wellbeing",
+  "patterns": ["How can I improve my emotional well-being?",
+  "What are some tips for enhancing my emotional health?",
+  "Can you suggest activities for emotional self-care?"],
+  "responses": ["Prioritizing self-care activities like taking breaks, practicing self-compassion, and setting boundaries can improve emotional well-being.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+  "Engaging in activities that bring joy, such as listening to music, spending time in nature, or connecting with loved ones, can positively impact emotions.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options.",
+  "Building a support system, seeking emotional support from friends or online communities, and expressing emotions through creative outlets are also helpful.Please note that the responses provided are for informational purposes and should not replace professional medical advice. It is recommended to consult with a qualified healthcare professional for accurate diagnosis, personalized guidance, and appropriate treatment options."],
+  "context_set": ""
+ },
+
+ 
+{"tag": "depression",
+"patterns": ["I feel Depressed?",
+"Solutions for Depression?",
+"Cure for depressin"],
+"responses": ["I'm sorry to hear that you're experiencing depression. It's important to remember that I'm a chatbot and not a substitute for professional help, but I can offer some suggestions that may help you cope: 1.Reach out to a Mental Health Professional.  2.Build a Support System.  3.Practice Relaxation Techniques.  4.Set Realistic Goals.  5.Create a Routine.   Remember, these suggestions are not a substitute for professional help. If you're in crisis or need immediate assistance, reach out to a helpline or emergency services."],
+"context_set": ""
+}
+
+]
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #f7f7f7;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 700px;
+            height:400px;
+            padding: 20px;
+            background-color: #4d7aee;
+            border-radius: 2%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 800px) {
+            .chat-container {
+                width: 400px;
+            height:400px;
+            }
+        }
+        .bubble-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .bubble {
+            display: inline-block;
+            background-color: #f1f0f0;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-bottom: 5px;
+            max-width: 70%;
+        }
+
+        .user-bubble {
+            background-color: #e5eaf4;
+            align-self: flex-end;
+        }
+
+        .bot-bubble {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+        }
+
+        .bubble strong {
+            color: #4d7aee;
+            font-weight: bold;
+        }
+
+        .bubble p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #chat-log {
+            width: 100%;
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        #send-btn {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #0008fffb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+        #download-data-btn {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #0008fffb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+        .chat-container:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(106, 162, 240, 0.8);
+            opacity: 0.4;
+            pointer-events: none;
+            transform: translate3d(0, 0, 0);
+            animation: floatBubble linear infinite;
+        }
+
+        @keyframes floatBubble {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            50% {
+                transform: translate3d(0, -300px, 0);
+            }
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    </style>
+    <title>Bubble</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Bubble Chatbot</h1>
+        <div id="chat-log">  </div>
+        <input id="user-input" type="text" placeholder="Type your message">
+        <button id="send-btn"><strong>Send</strong></button><br>
+        <button id="download-data-btn"><strong> Download Data</strong> </button>
+    </div>
+
+    <script>
+        const sendButton = document.getElementById('send-btn');
+        const userInput = document.getElementById('user-input');
+        const chatLog = document.getElementById('chat-log');
+        
+        sendButton.addEventListener('click', () => {
+            const message = userInput.value;
+            
+            if (message.trim() !== '') {
+                const userBubbleContainer = document.createElement('div');
+                userBubbleContainer.className = 'bubble-container';
+               
+                userBubbleContainer.innerHTML = `
+                    <div class="bubble user-bubble">
+                        <strong>You:</strong>
+                        <p>${message}</p>
+                    </div>
+                `;
+                chatLog.appendChild(userBubbleContainer);
+
+                fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `user_input=${encodeURIComponent(message)}`
+                })
+                .then(response => response.text())
+                .then(data => {
+                    const botBubbleContainer = document.createElement('div');
+                    botBubbleContainer.className = 'bubble-container';
+                    botBubbleContainer.innerHTML = `
+                        <div class="bubble bot-bubble">
+                            <strong>Bubble:</strong>
+                            <p>${data}</p>
+                        </div>
+                    `;
+                    chatLog.appendChild(botBubbleContainer);
+                    chatLog.scrollTop = chatLog.scrollHeight;
+                });
+            }
+            userInput.value = '';
+        });
+
+        // Download data as PDF
+        document.getElementById('download-data-btn').addEventListener('click', function () {
+            var chatLog = document.getElementById('chat-log');
+            var tempDiv = document.createElement('div');
+            
+            // Copy the existing chat log and its content to the temporary div
+            tempDiv.innerHTML ="Chat history : "+ chatLog.innerHTML;
+
+            // Create a new HTML2PDF instance
+            var opt = {
+                margin: 1,
+                filename: 'chatlog.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            // Generate and download the PDF from the temporary div
+            html2pdf().set(opt).from(tempDiv).save();
+        });
+    </script>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 100px;">
+        <div style="text-align: center;">
+            <p>Made with ❤️ by Team <strong>Expecto-Winno</strong>.</p>
+        </div>
+    </div>
+</body>
+</html>
