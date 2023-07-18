@@ -1,0 +1,624 @@
+<?php include('server.php') ?>
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-xmfkPr+3iIWX6iI8bFx8vXq5wPwD8U/4htpikT5WtPZlkEJbYVgS6+K5rYRVb1b2" crossorigin="anonymous">
+<style>.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    max-width: 200px;
+    padding: 5px 10px;
+    z-index: 999;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  </style>
+    <meta charset="utf-8">
+    
+    <!--====== Title ======-->
+    <title>Mental Oasis</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+        
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+        
+    <!--====== Magnific Popup CSS ======-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="assets/css/slick.css">
+        
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+        
+    <!--====== Font Awesome CSS ======-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+
+    <link rel="stylesheet" href="assets/css/css/mapstyle.css">
+   
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->    
+   
+   
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== HEADER PART START ======-->
+    
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="" href="index.html">
+                                <img src="assets/images/logo.png" alt="Logo" width="50px" style="border-radius: 30px;">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+    <ul id="nav" class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="page-scroll" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <div class="dropdown">
+            <a  class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+            </a>
+                <div  class="dropdown-content">
+                 
+                  <a href="#text">Text Emotion</a><br>
+                  <a href="#facial">Facial Expression</a><br>
+                  <a href="#sign">Sign Language</a><br>
+                  <a href="#chat">Chatbot</a><br>
+                  
+                  <a href="#mood">Mood Tracker</a><br>
+                  <a href="#mental">Mental Awareness</a><br>
+                </div>
+              </div>
+              
+        </li>
+        <li class="nav-item">
+            <a class="page-scroll" href="#team">Team</a>
+        </li>
+        <li class="nav-item">
+            <a class="page-scroll" href="#contact">Contact Us</a>
+        </li>
+    </ul>
+</div>
+ <!-- navbar collapse -->
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navbar area -->
+      </header>  
+      
+     <!--====== sign PART START ======-->
+    
+     <section id="text" class="sign-area pt-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="sign-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Text Emotion <span>Detection</span></h3>
+                        </div> <!-- section title -->
+                        <p class="text"> This is the Text to Emotion anlayser which takes text as input and analyses it to give out the emotion as output </span></p>
+                        <a href="#" class="main-btn">Try it</a>
+                    </div> <!-- sign content -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="sign-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <img src="assets/images/textimg.jpg" width="90%" alt="sign">
+                    </div> <!-- sign image -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+        
+    </section>
+    
+    <!--====== sign PART ENDS ======-->
+   
+    
+    <!--====== sign PART START ======-->
+    
+    <section id="facial" class="sign-area pt-70">
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-lg-last">
+                    <div class="sign-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Facial Expression <span> Recognization</span></h3>
+                        </div> <!-- section title -->
+                       
+                        <p class="text">This Facial emotion recognition recognises the emotion of the user in real time with the help of web cam and give the response and play videos to cheer the user with accordance to their emotion.</p>
+                        <a href="#" class="main-btn">Try it</a>
+                    </div> <!-- sign content -->
+                </div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="sign-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <img src="assets/images/facialimg.png"  width="90%" alt="sign">
+                    </div> <!-- sign image -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+
+   
+
+ <!--====== sign PART START ======-->
+    
+ <section id="sign" class="sign-area pt-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="sign-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="section-title">
+                        <div class="line"></div>
+                        <h3 class="title">Sign Language<span> Recognization</span></h3>
+                    </div> <!-- section title -->
+                    <p class="text">This Sign Language detection component enables the user to personalise their experience by creating their own dataset for the sign and then translating it ot text and copy it. 
+                    </p>
+                    <a href="#" class="main-btn">Try it</a>
+                </div> <!-- sign content -->
+            </div>
+            <div class="col-lg-6">
+                <div class="sign-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <img src="assets/images/signimg.jpg" width="90%" alt="sign">
+                </div> <!-- sign image -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+    
+</section>
+
+<!--====== sign PART ENDS ======-->
+    
+    <!--====== sign PART ENDS ======-->
+    
+ 
+    
+    <section id="chat" class="video-counter pt-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="video-content mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <center>
+                            <div>
+                                <img src="assets/images/chatbot.png" width="70%" alt="sign">
+                            </div>
+                        </center>
+                    </div> <!-- video content -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="counter-wrapper mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="counter-content">
+                            <div class="section-title">
+                                <div class="line"></div>
+                                <h3 class="title">Meet Our Chatbot</h3>
+                            </div> <!-- section title -->
+                            <p class="text">Our Mental Health Chatbot aims to provide responses to the most frequently asked questions on mental health. The chats can be downloaded so as to give the user the facility to glance into it later.  </p>
+                            <a href="http://127.0.0.1:5000/" class="main-btn">Try it</a> 
+                        </div> <!-- counter content -->
+                        <div class="row no-gutters">
+                            
+                        </div> <!-- row -->
+                    </div> <!-- counter wrapper -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+
+    <section id="mood" class="sign-area pt-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="sign-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Mood <span> Tracker</span></h3>
+                        </div> <!-- section title -->
+                        <p class="text">The Mood tracker can be used as a mood calendar to track the emotion, cause of the emotion and also journal. The feature to download the entered data makes it useful to keep a track of their emotions.</span></p>
+                        <a href="https://abhishek-1122.github.io/mood_tracker/" class="main-btn">Try it</a>
+                    </div> <!-- sign content -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="sign-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <img src="assets/images/moodimg.jpg" width="90%" alt="sign">
+                    </div> <!-- sign image -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+        
+    </section>
+
+
+    <section id="mental" class="sign-area pt-70">
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-lg-last">
+                    <div class="sign-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Mental <span>Awareness</span></h3>
+                            
+                        </div> <!-- section title -->
+                       
+                        <p class="text">This mental Health Awareness corner encompasses the causes and coping mechanisms for the common mental health concerns and also has the helpine numbers.  </p>
+                        <a href="mentalawareeness/mental.html" class="main-btn">Try it</a>
+                    </div> <!-- sign content -->
+                </div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="sign-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <img src="assets/images/stressimg1.png"  width="90%" alt="sign">
+                    </div> <!-- sign image -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== VIDEO COUNTER PART ENDS ======-->
+    
+    <!--====== TEAM PART START ======-->
+    
+    <section id="team" class="team-area pt-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title text-center pb-30">
+                        <div class="line m-auto"></div>
+                        <h3 class="title"><span>Meet Our</span> Team Members</h3>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="team-image">
+                            <img src="assets/images/team-1.png" alt="Team" height="300px">
+                            <div class="social">
+                                <ul>
+                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5 class="holder-name"><a href="#">Akshata G K</a></h5>
+                            
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="team-image">
+                            <img src="assets/images/team-2.png" alt="Team" height="300px">
+                            <div class="social">
+                                <ul>
+                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5 class="holder-name"><a href="#">Abhishek U</a></h5>
+                            
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-7 col-sm-8">
+                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="team-image">
+                            <img src="assets/images/team-3.jpeg" alt="Team" height="300px">
+                            <div class="social">
+                                <ul>
+                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5 class="holder-name"><a href="#">Bhumika S</a></h5>
+                            
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== TEAM PART ENDS ======-->
+    
+    
+   
+    
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->   
+    
+    <!--====== PART START ======-->
+    
+<!--
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-"></div>
+            </div>
+        </div>
+    </section>
+-->
+    
+    <!--====== PART ENDS ======-->
+
+
+
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <!--====== Plugins js ======-->
+    <script src="assets/js/plugins.js"></script>
+    
+    <!--====== Slick js ======-->
+    <script src="assets/js/slick.min.js"></script>
+    
+    <!--====== Ajax Contact js ======-->
+    <script src="assets/js/ajax-contact.js"></script>
+    
+    <!--====== Counter Up js ======-->
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    
+    <!--====== Magnific Popup js ======-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
+    
+    <!--====== Particles js ======-->
+    <script src="assets/js/particles.min.js"></script>
+    
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+
+
+    <script>
+        document.getElementById("services").addEventListener("click", function() {
+  this.parentElement.classList.toggle("active");
+});
+
+    </script>
+    
+
+<div id="contact" class="container-xxl py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="text-center mx-auto" style="max-width: 500px;">
+                    <p class="section-title bg-white text-center text-primary px-3" style="font-size: 30px; font-weight: bold;">Contact Us</p>
+                    <br>
+                    <h1 class="mb-5" style="font-size: 20px;">If You Have Any Query, Please Contact Us</h1>
+                </div>
+                <h3 class="mb-4">Contact Details</h3>
+                <div class="d-flex border-bottom pb-3 mb-3">
+                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle">
+                        <i class="fa fa-map-marker-alt text-body"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6>Our Office</h6>
+                        <span>GM Institute of technology, PB road, Davangere</span>
+                    </div>
+                </div>
+                <div class="d-flex border-bottom pb-3 mb-3">
+                    <div class="ms-3">
+                        <h6>Call Us</h6>
+                        <span>+91 8867375826</span>
+                    </div>
+                </div>
+                <div class="d-flex border-bottom-0 pb-3 mb-3">
+                    <div class="ms-3">
+                        <h6>Mail Us</h6>
+                        <span>mentaloasis@gmail.com</span>
+                    </div>
+                </div>
+
+                <iframe class="w-100 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.1583270164147!2d75.88222367476396!3d14.475596385996067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba2f6e51325245%3A0x9b42a50b7155a708!2sGM%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1682189082371!5m2!1sen!2sin" frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="text-center mx-auto" style="max-width: 500px;">
+                    <h3 class="mb-4">Have a question or a suggestion?</h3>
+                    <p class="mb-4">We would love to hear from you and are always open for feedback. Let us know your thoughts.</p>
+                </div>
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 250px"></textarea>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End
+
+
+
+
+
+
+    Footer Start -->
+   <div class="container-fluid bg-transparent footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s" style="margin: bottom 0%; ;">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Contact</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>GM Institute of technology</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8867375826</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i> mentaloasis@gmail.com</p>
+                
+                
+            </div>
+            <div class="col-lg-3 col-md-6" style="padding: 20px; margin-top: 0px;">
+                <div>  <h5 class="text-white mb-4">Quick Links</h5></div>
+              <div><a class="btn btn-link" href="#team">About Us</a></div>
+                <div>   <a class="btn btn-link" href="#contact">Contact Us</a></div>
+             
+              
+                
+            </div>
+           
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+ <!--====== FOOTER PART START ======-->
+  /*  
+ <footer id="footer" class="footer-area pt-120">
+    <div class="container">
+        
+        <div class="footer-widget pb-100">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="footer-sign mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <a class="logo" href="#">
+                            <img src="assets/images/logo.png" alt="Logo" width="30%" style="border-radius: 100px;">
+                        </a>
+                        <p class="teamlove">Made with ❤️ by Team Expecto-Winno.</p>
+                    </div> <!-- footer sign -->
+                </div>
+                <div class="col-lg-5 col-md-7 col-sm-7">
+                    <div class="footer-link d-flex mt-50 justify-content-md-between">
+                        <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                        </div> <!-- footer wrapper -->
+                    </div> <!-- footer link -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- footer widget -->
+    </div> <!-- container -->
+    <div id="particles-2"></div>
+</footer>
+
+<!--====== FOOTER PART ENDS ======-->
+
+
+<!-- Copyright Start 
+<div style="display: flex; justify-content: center; align-items: center; height: 70px;">
+    <div style="text-align: center;">
+        &copy; <a style="font-weight: 600; text-decoration: none; color: #333;" href="#">Expecto-Winno</a>, All Rights Reserved.
+    </div>
+</div> -->
+
+<!-- Copyright End -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha384-ZfM5erBb14t+5q5+5vMKgauIj+BlCp7z5BmNGY7UdbEVbiysSe53g6jH6va3Zfn1" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
