@@ -1,0 +1,146 @@
+from flask import Flask, render_template, Response
+import cv2
+import numpy as np
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.models import model_from_json
+import time
+import tkinter as tk
+from tkinter import messagebox
+import threading
+import webbrowser
+
+# Load the emotion recognition model
+model = model_from_json(open("model/emotion_model.json", "r").read())
+model.load_weights('model/emotion_model.h5')
+
+# Load the face cascade classifier
+face_haar_cascade = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
+
+app = Flask(__name__)
+camera = cv2.VideoCapture(0)
+
+emotions = ['angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral']
+
+emotion_videos = {
+    'angry':['https://drive.google.com/file/d/1N4fS9QRWu3TQJw4sjgKfParAeSIsk5Nh/view?usp=drive_link','https://drive.google.com/file/d/1-g8MayD2FlCOt1M66KyXfCU--5malh91/view?usp=drive_link'],
+    'disgust': ['https://drive.google.com/file/d/1mbdIki4bBCHtuFb62yfcrQLygTBAU7qX/view?usp=drive_link','https://drive.google.com/file/d/15LU4Wgb_jSNjCCGTHPXhw1HC--88BHtn/view?usp=drive_link'],
+    'fear': ['https://drive.google.com/file/d/1eACGryDdS9rGZySVC6l1K15sxpKT5IIH/view?usp=drive_link','https://drive.google.com/file/d/1TOItIk4iadd7rJDVgXp2n5O_BLTLgcm1/view?usp=drive_link'],
+    'happy': ['https://drive.google.com/file/d/13Ri54tRfSMnPeJxPom9eMq5cQVtVpuSv/view?usp=drive_link','https://drive.google.com/file/d/1B1D2p1-7AmtdQxj8NTUj2q3EW9_pQKoi/view?usp=drive_link'],
+    'sad': ['https://drive.google.com/file/d/1AGWZCZ3XawYeyShnE8kgsYhodQeTDHP2/view?usp=drive_link', 'https://drive.google.com/file/d/1YPo9sG4Cyq2BZJOStd50KABrK2lFcmye/view?usp=drive_link'],
+    'surprise': ['https://drive.google.com/file/d/1PcGXRZCb7_3UvzkLjUvwkA81iSsvFTzA/view?usp=drive_link','https://drive.google.com/file/d/1lQvNMj9nh_3W3lnWVVOLHleB4xXJczUP/view?usp=drive_link'],
+    'neutral': ['https://drive.google.com/file/d/10R1whmEy-ImBvBCUthkHyeUYdVuvhvN8/view?usp=drive_link','https://drive.google.com/file/d/1QivwYdHX6QJ9xV8Bi4NcTL2P3SxWCN9a/view?usp=drive_link']
+}
+
+def get_empathetic_response(emotion):
+    # Function to get empathetic response based on the detected emotion
+    if emotion == 'angry':
+        return "I understand that you're feeling angry. Take deep breaths and try to calm down."
+    elif emotion == 'disgust':
+        return "I see that you're feeling disgusted. Remember to focus on the positive things around you."
+    elif emotion == 'fear':
+        return "It looks like you're feeling fearful. Try to identify your fears and take small steps to overcome them."
+    elif emotion == 'happy':
+        return "You're feeling happy! That's great to hear. Keep spreading positivity!"
+    elif emotion == 'sad':
+        return "I can tell that you're feeling sad. Remember that it's okay to not be okay, and reach out to someone for support."
+    elif emotion == 'surprise':
+        return "You seem surprised! Embrace the unexpected and see where it takes you."
+    elif emotion == 'neutral':
+        return "You're feeling neutral. Take some time to reflect on your emotions and find ways to express yourself."
+    else:
+        return "Unknown emotion"
+
+def display_emotion_and_response(emotion):
+    response = get_empathetic_response(emotion)
+    messagebox.showinfo("Emotion Recognition", f"Emotion: {emotion}\nResponse: {response}")
+
+    if emotion in emotion_videos:
+        video_url = emotion_videos[emotion]
+        webbrowser.open(video_url)
+
+def display_detected_emotion(emotion):
+    messagebox.showinfo("Detected Emotion", f"Detected Emotion: {emotion}")
+
+def gen_frames():
+    previous_emotion = None
+    emotion_count = 0
+
+    while True:
+        success, frame = camera.read()
+        if not success:
+            break
+        else:
+            gray_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            faces_detected = face_haar_cascade.detectMultiScale(gray_img, 1.32, 5)
+
+            for (x, y, w, h) in faces_detected:
+                cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), thickness=7)
+                roi_gray = gray_img[y:y+w, x:x+h]
+                roi_gray = cv2.resize(roi_gray, (48, 48))
+                img_pixels = image.img_to_array(roi_gray)
+                img_pixels = np.expand_dims(img_pixels, axis=0)
+                img_pixels /= 255
+
+                predictions = model.predict(img_pixels)
+                max_index = np.argmax(predictions[0])
+                predicted_emotion = emotions[max_index]
+
+                threading.Thread(target=display_emotion_and_response, args=(predicted_emotion,)).start()
+
+                time.sleep(10)
+
+                if predicted_emotion != 'happy':
+                    if predicted_emotion != previous_emotion and predicted_emotion in emotion_videos:
+                        videos = emotion_videos[predicted_emotion]
+                        video_url = videos[emotion_count % len(videos)]
+                        webbrowser.open(video_url)
+                        previous_emotion = predicted_emotion
+                        emotion_count += 1
+                    elif predicted_emotion == previous_emotion and predicted_emotion in emotion_videos:
+                        videos = emotion_videos[predicted_emotion]
+                        video_url = videos[emotion_count % len(videos)]
+                        webbrowser.open(video_url)
+                        emotion_count += 1
+                    else:
+                        emotion_count = 0
+                else:
+                    previous_emotion = None
+                    emotion_count = 0
+                    display_detected_emotion(predicted_emotion)
+
+                # Exit the loop if happy emotion is detected
+                if predicted_emotion == 'happy':
+                    break
+
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+def run_flask_app():
+    app.run(debug=False)
+
+def start_gui():
+    root = tk.Tk()
+    root.withdraw()
+    root.mainloop()
+
+if __name__ == '__main__':
+    flask_thread = threading.Thread(target=run_flask_app)
+    flask_thread.start()
+
+    gui_thread = threading.Thread(target=start_gui)
+    gui_thread.start()
+
+    flask_thread.join()
+    gui_thread.join()

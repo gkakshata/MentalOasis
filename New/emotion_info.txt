@@ -1,0 +1,32 @@
+Emotion 0:
+Emotion: happy
+Response: Response for happy
+
+Emotion 1:
+Emotion: sad
+Response: Response for sad
+
+Emotion 2:
+Emotion: happy
+Response: Response for happy
+
+Emotion 3:
+Emotion: happy
+Response: Response for happy
+
+Emotion 4:
+Emotion: sad
+Response: Response for sad
+
+Emotion 5:
+Emotion: sad
+Response: Response for sad
+
+Emotion 6:
+Emotion: surprise
+Response: Response for surprise
+
+Emotion 7:
+Emotion: angry
+Response: Response for angry
+
