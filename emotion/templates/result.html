@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>Emotion Analysis Result</title>
+  <style>
+    body {
+      background-color: lightblue;
+    }
+    h2 {
+      text-align: center;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 60%;
+      background-color: white;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: lightgray;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .button {
+      background-color: lightblue;
+      color: black;
+      font-size: 15px;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #87cefa;
+    }
+  </style>
+</head>
+<body>
+  <h2>Emotion Analysis Result</h2>
+  <table>
+    <tr>
+      <th>Emotion</th>
+      <th>Score</th>
+      <th>Actions</th>
+    </tr>
+    {% for emotion, score in emotions.items() %}
+    {% if score != 0.0 %}
+    <tr>
+      <td>{{ emotion }}</td>
+      <td>{{ score }}</td>
+      <td>
+        {% if emotion == 'Happy' %}
+        <a href="{{ url_for('redirect_emotion', emotion='happy') }}" class="button">Meditate</a>
+        {% elif emotion == 'Sad' %}
+        <a href="{{ url_for('redirect_emotion', emotion='sad') }}" class="button">Listen to Music</a>
+        {% elif emotion == 'Angry' %}
+        <a href="{{ url_for('redirect_emotion', emotion='angry') }}" class="button">Take a Break</a>
+        {% elif emotion == 'Fear' %}
+        <a href="{{ url_for('redirect_emotion', emotion='fear') }}" class="button">Take Deep Breaths</a>
+        {% elif emotion == 'Surprise' %}
+        <a href="{{ url_for('redirect_emotion', emotion='surprise') }}" class="button">Relax</a>
+        {% endif %}
+      </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </table>
+</body>
+</html>

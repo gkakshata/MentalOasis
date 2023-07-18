@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Emotion Analyzer</title>
+    <style>
+      body {
+        background-color: lightblue;
+      }
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  textarea {
+    width: 800px;
+    height: 200px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .button {
+    background-color: lightblue;
+    color: black;
+    font-size: 30px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #87cefa;
+  }
+</style>
+  </head>
+  <body>
+    <center><i><u><h1>Text Emotion Analyzer</h1></u></i></center>
+    <form action="/analyze" method="POST">
+      <textarea name="text" rows="10" cols="50"></textarea>
+      <br>
+      <button class="button"><b>Analyze</b></button>
+    </form> 
+  </body>
+</html>
