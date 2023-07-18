@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <h2>Emotion Analysis Result</h2>
+    <table>
+      <tr>
+        <th>Emotion</th>
+        <th>Score</th>
+      </tr>
+      {% for emotion, score in emotions.items() %}
+      <tr>
+        <td>{{ emotion }}</td>
+        <td>{{ score }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
